@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "195824080498",
+    "firebase_url": "https://parker-505c0.firebaseio.com",
+    "project_id": "parker-505c0",
+    "storage_bucket": "parker-505c0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:195824080498:android:20a9be32a1f40288aad4eb",
+        "android_client_info": {
+          "package_name": "com.example.parker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "195824080498-2jv6lqr2sa5eqql52rlos9f0vd83acgs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZix06fyP79uRsc-avPqJWfY2TkZHwI90"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "195824080498-2jv6lqr2sa5eqql52rlos9f0vd83acgs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapActivity">
+
+
+
+    <fragment
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.mapwithmarker.MapsMarkerActivity"
+        tools:ignore="MissingClass" />
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:background="@drawable/whiteborder"
+    android:elevation="10dp"
+    android:id="@+id/relayout1">
+<ImageView
+    android:layout_width="15dp"
+    android:layout_height="15dp"
+    android:id="@+id/magnifine"
+    android:layout_centerVertical="true"
+    android:layout_marginLeft="10dp"
+    android:src="@drawable/ic_baseline_search_24"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@+id/magnifine"
+        android:layout_centerVertical="true"
+        android:textSize="15sp"
+        android:textColor="@color/colorPrimary"
+        android:singleLine="true"
+        android:id="@+id/input_search"
+        android:imeOptions="actionSearch"
+        android:hint="Search the are you want to find parking"/>
+
+    
+</RelativeLayout>
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/relayout1"
+        android:id="@+id/loc"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:scaleType="centerCrop"
+android:src="@drawable/ic_gps"
+
+        />
+</RelativeLayout>

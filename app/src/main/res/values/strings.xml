@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Parker</string>
+    <string name="zero">zero</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="app_description"> Free Parking ★ is a useful mobile app which helps you to find the nearest free or cheapest parking spot around you or a specific address ! Be aware that Free Parking is not a game.
+
+☆ Available features :
+- Search all parking spaces near a specific address
+- Report a car parking that is missing
+- Report an error concerning a parking lot
+- Find and navigate to a free park
+- Automatic refresh of the parking places
+- Simple and intuitive interface
+
+☆ Coming soon:
+- Save the location where your car is parked
+- Disabled parking locator
+- And more !
+
+☆ Parkings around the world: New York, Londres, Berlin, Paris, Mexico, Le Caire, Kinshasa, Moscou, Sao Paulo, Canton, Istanbul, Beijing, Shanghai, etc.
+
+Enjoy !
+</string>
+    <string name="contact_group">+9082345159</string>
+    <string name="application_information_group">Close navigation drawer</string>
+    <string name="fb">www.facebook.com</string>
+    <string name="insta">www.instagram.com</string>
+   <string name="api">AIzaSyAWJmCCMJSYbK3UcmowbiSdG8q11Y8I8WM</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
