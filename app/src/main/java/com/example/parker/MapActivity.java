@@ -114,7 +114,7 @@ col.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
      {
             Note notenew=documentSnapshot.toObject(Note.class);
          String a=documentSnapshot.getId();
-         Toast.makeText(MapActivity.this, a, Toast.LENGTH_SHORT).show();
+        // Toast.makeText(MapActivity.this, a, Toast.LENGTH_SHORT).show();
          double lat=Double.parseDouble(notenew.getLatitude());
          double lng=Double.parseDouble(notenew.getLongitude());
          String title=notenew.getTitle();

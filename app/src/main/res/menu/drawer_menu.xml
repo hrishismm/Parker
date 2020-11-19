@@ -4,6 +4,7 @@
             <!--Add Items-->
         <item
             android:id="@+id/one"
+            android:enabled="true"
             android:icon="@drawable/ic_car"
             android:title="Home" />
         <item

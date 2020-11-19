@@ -43,19 +43,20 @@
         android:singleLine="true"
         android:id="@+id/input_search"
         android:imeOptions="actionSearch"
-        android:hint="Search the are you want to find parking"/>
+        android:hint="Search area for parking space"/>
 
     
 </RelativeLayout>
+
     <ImageView
+        android:id="@+id/loc"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_below="@+id/relayout1"
-        android:id="@+id/loc"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="16dp"
         android:scaleType="centerCrop"
-android:src="@drawable/ic_gps"
 
-        />
+        android:src="@drawable/ic_gps" />
 </RelativeLayout>

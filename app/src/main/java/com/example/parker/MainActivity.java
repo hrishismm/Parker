@@ -66,11 +66,7 @@ boolean doubleBackToExitPressedOnce = false;
         mAuth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
         userId = mAuth.getCurrentUser().getUid();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            Window w = getWindow();
-            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
-        }
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         updatenavheader();
         /*Creating the toggle*/
@@ -80,7 +76,7 @@ boolean doubleBackToExitPressedOnce = false;
         /*For the fragment to be selected by default*/
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new fragment1()).commit();
+                    new aboutus()).commit();
             navigationView.setCheckedItem(R.id.one);
         }
         fstore.collection("userparkings").document(userId).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {

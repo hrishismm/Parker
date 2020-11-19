@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@drawable/gradient"
+    android:background="@color/white"
     tools:context=".signup">
 
 
@@ -26,18 +26,21 @@
         android:layout_above="@+id/editTextPassword"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="48dp"
+        android:textColorHint="@color/black"
         android:background="#11000000"
         android:drawableLeft="@drawable/ic_baseline_verified_user_24"
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="16dp" />
 
     <EditText
         android:id="@+id/editTextPassword"
         android:layout_width="260dp"
         android:layout_height="50dp"
+        android:textColorHint="@color/black"
+
         android:layout_alignStart="@+id/editTextEmail"
         android:layout_alignLeft="@+id/editTextEmail"
         android:layout_alignBottom="@+id/imageView"
@@ -50,7 +53,7 @@
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
-        android:textColor="@color/white" />
+        android:textColor="@color/black" />
 
     <Button
         android:id="@+id/buttonSignup"
@@ -59,7 +62,8 @@
         android:layout_below="@+id/editTextPassword"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="200dp"
-        android:background="@drawable/roundshape"
+        android:background="@color/black"
+        android:textColor="@color/white"
         android:text="Signup" />
 
     <Button
@@ -70,17 +74,17 @@
 
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:background="@drawable/roundshape"
+        android:background="@color/black"
+        android:textColor="@color/white"
         android:text="Signin" />
 
     <TextView
         android:id="@+id/forgotpassword"
-        android:layout_width="220dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/buttonSignin"
-        android:layout_alignParentStart="true"
+android:textColor="@color/black"
         android:layout_centerInParent="true"
-        android:layout_marginStart="121dp"
-        android:layout_marginTop="41dp"
+        android:layout_marginTop="28dp"
         android:text="Forgot password?" />
 </RelativeLayout>

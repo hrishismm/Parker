@@ -37,10 +37,13 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import static java.util.logging.Logger.global;
 
@@ -92,7 +95,7 @@ TextView name,description,space,remaining,lat,lon;
                             public void onTimeSet(TimePicker view, int hourOfDay,
                                                   int minute) {
 
-                                textview1.setText(hourOfDay + ":" + minute);
+                                textview1.setText(hourOfDay + ":" + minute+":00");
 
 
                             }
@@ -116,7 +119,7 @@ TextView name,description,space,remaining,lat,lon;
                             public void onTimeSet(TimePicker view, int hourOfDay,
                                                   int minute) {
 
-                                Textview2.setText(hourOfDay + ":" + minute);
+                                Textview2.setText(hourOfDay + ":" + minute+":00");
                             }
                         }, hour, minute, true);
                 timePickerDialog.show();
@@ -126,40 +129,49 @@ TextView name,description,space,remaining,lat,lon;
 b4.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
-        String in1=textview1.getText().toString().substring(0,2);
-        String in2=textview1.getText().toString().substring(3,5);
-        String out1=Textview2.getText().toString().substring(0,2);
-        String out2=Textview2.getText().toString().substring(3,5);
-        String in=in1+"."+in2;
+        String time1 = textview1.getText().toString();
+        String time2 = Textview2.getText().toString();
 
-        String out=out1+"."+out2;
-        Double infinal=Double.parseDouble(in);
-        Double outfinal=Double.parseDouble(out);
-
-        Double final1=outfinal-infinal;
-        if(final1<2)
-        {
-            fees.setText("20");
-
+        SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
+        Date date1 = null;
+        try {
+            date1 = format.parse(time1);
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
-        else if(final1>2 && final1<=8)
-        {
-            fees.setText("50");
-
+        Date date2 = null;
+        try {
+            date2 = format.parse(time2);
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
-        else if(final1>8 && final1<=24)
-        {
-            fees.setText("80");
+        long difference = date2.getTime() - date1.getTime();
+        long hour = TimeUnit.MILLISECONDS.toHours(difference);
 
-        }
-         }
+        Toast.makeText(DetailsActivity.this, Long.toString(hour), Toast.LENGTH_LONG).show();
+
+       if(hour>0)
+       {
+          // Toast.makeText(DetailsActivity.this, "Positive", Toast.LENGTH_SHORT).show();
+           if(hour<=2)
+           {
+               Toast.makeText(DetailsActivity.this, "50rs", Toast.LENGTH_SHORT).show();
+           }
+           if(hour>2 && hour<=8)
+           {
+               Toast.makeText(DetailsActivity.this, "100rs", Toast.LENGTH_SHORT).show();
+           }
+           if(hour>8 && hour<=24)
+           {
+               Toast.makeText(DetailsActivity.this, "120rs", Toast.LENGTH_SHORT).show();
+           }
+
+
+       }
+
+    }
 });
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            Window w = getWindow();
-            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-
-        }
         b1=findViewById(R.id.book);
         final String title=getIntent().getStringExtra("title");
         //col.document(title);

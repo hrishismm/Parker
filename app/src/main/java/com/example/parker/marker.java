@@ -72,19 +72,15 @@ private  static final String TAG="marker";
         editText=(EditText)findViewById(R.id.input_search);
         mgps=(ImageView)findViewById(R.id.loc);
         Places.initialize(getApplicationContext(),"AIzaSyCCd9RfsdTepSkf-cfNDGMO9R-uqLBfFNQ");
-        arrayList.add(Mumbai);
-        arrayList.add(Delhi);
-        arrayList.add(Chennai);
+       // arrayList.add(Mumbai);
+       // arrayList.add(Delhi);
+        //arrayList.add(Chennai);
 
-        title.add("Mumbai");
-        title.add("Delhi");
-        title.add("Chennai");
+//        title.add("Mumbai");
+  //      title.add("Delhi");
+    //    title.add("Chennai");
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            Window w = getWindow();
-            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
-        }
     }
 
     private void getdevicelocation() {
@@ -161,7 +157,7 @@ private  static final String TAG="marker";
             public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
                 if(actionId== EditorInfo.IME_ACTION_SEARCH || actionId==EditorInfo.IME_ACTION_DONE||keyEvent.getAction()==keyEvent.ACTION_DOWN||keyEvent.getAction()==KeyEvent.KEYCODE_ENTER)
                 {
-                    Toast.makeText(marker.this, "GeoLocating started", Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(marker.this, "GeoLocating started", Toast.LENGTH_SHORT).show();
                     geolocate();
                 }
                 return  false;
@@ -206,7 +202,7 @@ private  static final String TAG="marker";
         {
             Address address=list.get(0);
             Log.d(TAG,"Geolocating:Found location"+address.toString());
-            Toast.makeText(this, "Adress"+address.toString(), Toast.LENGTH_SHORT).show();
+       //     Toast.makeText(this, "Adress"+address.toString(), Toast.LENGTH_SHORT).show();
             movecamera(new LatLng(address.getLatitude(),address.getLongitude()),DEFAULT_ZOOM,address.getAddressLine(0));
         }
 
@@ -311,7 +307,7 @@ private  static final String TAG="marker";
     @Override
     public void onMarkerDragEnd(Marker marker) {
             LatLng latLng=marker.getPosition();
-        Toast.makeText(this, latLng.toString(), Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, latLng.toString(), Toast.LENGTH_SHORT).show();
 
     }
 

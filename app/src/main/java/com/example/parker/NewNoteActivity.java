@@ -49,11 +49,7 @@ public class NewNoteActivity extends AppCompatActivity {
         lon=(TextView)findViewById(R.id.lon);
 
         b1=(Button)findViewById(R.id.b1);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            Window w = getWindow();
-            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
-        }
 /*mapbutton=(Button)findViewById(R.id.map);
 mapbutton.setOnClickListener(new View.OnClickListener() {
     @Override

@@ -47,11 +47,7 @@ public class signin extends AppCompatActivity {
             // User is signed out
 
         }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            Window w = getWindow();
-            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
-        }
         b_sign_up=(TextView)findViewById(R.id.textView2);
         b_sign_up.setOnClickListener(new View.OnClickListener() {
             @Override
