@@ -1,9 +1,11 @@
 package com.example.parker;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,11 +22,12 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
-public class fragment_1 extends Fragment {
+public class fragment_1 extends Fragment implements View.OnClickListener {
     private FirebaseFirestore fstore=FirebaseFirestore.getInstance();
     String userId ;
     private FirebaseAuth mAuth;
     TextView tv1,tv2,tv3,tv4;
+    Button delete;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -34,10 +37,13 @@ public class fragment_1 extends Fragment {
         tv2=(TextView)v.findViewById(R.id.parkingdescription);
         tv3=(TextView)v.findViewById(R.id.parkinglatitude);
         tv4=(TextView)v.findViewById(R.id.parkinglongitude);
-
+delete=(Button)v.findViewById(R.id.delete);
         mAuth = FirebaseAuth.getInstance();
 
         userId = mAuth.getCurrentUser().getUid();
+
+
+
 
 
 fstore.collection("userparkings").document(userId).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -70,9 +76,19 @@ fstore.collection("userparkings").document(userId).get().addOnCompleteListener(n
 
 
 
-
+delete.setOnClickListener(this);
 
 
         return v;
+    }
+
+    @Override
+    public void onClick(View view) {
+        DocumentReference documentReference = fstore.collection("userparkings").document(userId);
+
+        documentReference.delete();
+        Intent intent = new Intent(getActivity(),MainActivity.class);
+        startActivity(intent);
+
     }
 }
